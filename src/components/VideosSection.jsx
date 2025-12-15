@@ -15,7 +15,15 @@ export default function VideosSection({ innerRef }) {
             allowFullScreen
           />
         </div>
-        
+        <div className="aspect-video rounded-2xl overflow-hidden shadow-lg border border-emerald-50">
+          <iframe
+            className="w-full h-full"
+            src="https://www.youtube.com/embed/a_n4uSWaZGM"
+            title="Comparación COSO 2013 y COSO ERM 2017 (2)"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          />
+        </div>
       </div>
     </section>
   );
