@@ -6,7 +6,7 @@ SPA en React + Vite + TailwindCSS con gráficos Recharts. Incluye navegación an
 - Node.js 18+ (recomendado 20+)
 - npm
 
-## Instalación
+## Instalación (manual)
 ```bash
 npm install
 ```
@@ -15,8 +15,7 @@ npm install
 ```bash
 npm run dev
 ```
-Abre el enlace que muestra Vite (ej. http://localhost:5173). La navbar permite scroll suave a cada sección.
-> Nota: si tu entorno no permite levantar servidores (error `listen EPERM`), usa el build y abre `dist/index.html` directamente en el navegador.
+Abre el enlace que muestra Vite (ej. http://localhost:5173).
 
 ## Build de producción
 ```bash
@@ -24,6 +23,35 @@ npm run build
 npm run preview  # opcional para revisar el build
 ```
 Con `base: "./"` en `vite.config.js`, el build queda listo para abrirse sin servidor desde `dist/index.html`.
+
+## Despliegue en Windows (desde 0)
+Scripts incluidos:
+- PowerShell: `scripts/deploy.ps1`
+- CMD wrapper: `scripts/deploy.cmd`
+
+Ejemplos:
+```bat
+scripts\deploy.cmd dev
+scripts\deploy.cmd build
+scripts\deploy.cmd preview 4173 0.0.0.0
+```
+
+En PowerShell:
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\deploy.ps1 -Mode dev
+powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\deploy.ps1 -Mode dev -CleanNodeModules -CleanDist
+```
+
+## Acceso público (ngrok / Cloudflare Tunnel)
+Este proyecto valida hosts por seguridad (Vite `server.allowedHosts`). Ya está configurado para:
+- `*.trycloudflare.com`
+- `*.ngrok-free.dev` y `*.ngrok-free.app`
+
+Comandos típicos:
+- ngrok: `ngrok http 5173`
+- cloudflared (quick tunnel): `cloudflared tunnel --url http://localhost:5173/`
+
+Si aparece `Blocked request. This host (...) is not allowed`, agrega el dominio (o subdominio) a `vite.config.js` en `server.allowedHosts`.
 
 ## Estructura clave
 - `src/main.jsx`: arranque de React y estilos globales.
@@ -34,14 +62,16 @@ Con `base: "./"` en `vite.config.js`, el build queda listo para abrirse sin serv
 
 ## Interactividad principal
 - **Páginas COSO** (`Coso2013Page`, `CosoErm2017Page` + `FrameworkContent`): componentes, principios y simulador de caso práctico por marco.
-- **Simulador ERM** (`ErmSimulator` + RadarChart): sliders/botones calculan niveles actual vs objetivo por componente COSO.
+- **Radar por marco** (`FrameworkContent`): radar sincronizado con el “Simulador de caso práctico” (línea base vs ajuste actual).
+- **Simulador ERM** (`ErmSimulator` + RadarChart): disponible dentro de la página **COSO ERM 2017**.
 - **Casos** (`CasesSection`): switch entre Tech Solution y Textil, gráfico de barras antes/después.
 - **Quiz** (`QuizSection`): 5 preguntas con feedback inmediato.
 
 ## Estilos
-- Tailwind para layout responsivo y paleta verde/azul.
-- Gradientes en hero y botones; tarjetas con sombra y bordes suaves.
+- Tailwind para layout responsivo.
+- Navbar con menú móvil.
+- Páginas COSO 2013 / COSO ERM 2017 con estilos por tema (verde/indigo).
 
 ## Notas
-- Si ves warning de tamaño de bundle en build, es por Recharts; se puede reducir con code splitting/lazy load.
-- Usa `npm run dev` para hot reload; evita crear refs en bucles de hooks (ya corregido en `App.jsx`).
+- El build usa code-splitting (rutas COSO bajo demanda) y chunks separados para `recharts`.
+- Archivos que no deben subirse están en `.gitignore` (incluye `personal/`, `node_modules/`, `dist/`, `.env*`).
