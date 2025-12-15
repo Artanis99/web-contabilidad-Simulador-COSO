@@ -1,7 +1,6 @@
 import { Suspense, lazy, useEffect, useMemo, useRef, useState, createRef } from "react";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
-import ErmSimulator from "./components/ErmSimulator";
 import CasesSection from "./components/CasesSection";
 import QuizSection from "./components/QuizSection";
 import ResourcesSection from "./components/ResourcesSection";
@@ -10,7 +9,7 @@ import VideosSection from "./components/VideosSection";
 const Coso2013Page = lazy(() => import("./pages/Coso2013Page"));
 const CosoErm2017Page = lazy(() => import("./pages/CosoErm2017Page"));
 
-const homeSectionIds = ["inicio", "simulador", "casos", "evaluacion", "recursos", "videos"];
+const homeSectionIds = ["inicio", "casos", "evaluacion", "recursos", "videos"];
 
 function parseRouteFromHash(hash) {
   const raw = (hash ?? "").replace(/^#/, "");
@@ -98,9 +97,8 @@ export default function App() {
         </Suspense>
       ) : (
         <>
-          <Hero innerRef={sectionsRef.inicio.ref} onStart={() => navigate("section:simulador")} />
+          <Hero innerRef={sectionsRef.inicio.ref} onStart={() => navigate("cosoErm2017")} />
           <main className="space-y-16 sm:space-y-20 pb-20 sm:pb-24">
-            <ErmSimulator innerRef={sectionsRef.simulador.ref} />
             <CasesSection innerRef={sectionsRef.casos.ref} />
             <QuizSection innerRef={sectionsRef.evaluacion.ref} />
             <ResourcesSection innerRef={sectionsRef.recursos.ref} />

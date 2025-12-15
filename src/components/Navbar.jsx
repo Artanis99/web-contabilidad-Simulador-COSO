@@ -8,7 +8,6 @@ export default function Navbar({ currentRoute, onNavigate }) {
     { id: "home", label: "Inicio", kind: "route" },
     { id: "coso2013", label: "COSO 2013", kind: "route", prominent: true },
     { id: "cosoErm2017", label: "COSO ERM 2017", kind: "route", prominent: true },
-    { id: "simulador", label: "Simulador", kind: "section" },
     { id: "casos", label: "Casos", kind: "section" },
     { id: "evaluacion", label: "Evaluación", kind: "section" },
     { id: "recursos", label: "Recursos", kind: "section" },
@@ -16,7 +15,8 @@ export default function Navbar({ currentRoute, onNavigate }) {
   ];
 
   const handleNavigate = (link) => {
-    onNavigate(link.kind === "route" ? link.id : `section:${link.id}`);
+    const target = link.target ?? link.id;
+    onNavigate(link.kind === "route" ? target : `section:${target}`);
     setIsOpen(false);
   };
 

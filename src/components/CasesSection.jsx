@@ -41,7 +41,7 @@ export default function CasesSection({ innerRef }) {
   const caso = useMemo(() => casos[clave], [clave]);
 
   return (
-    <section id="casos" ref={innerRef} className="max-w-6xl mx-auto px-4 scroll-mt-24">
+    <section id="casos" ref={innerRef} className="max-w-6xl mx-auto px-4 scroll-mt-24 mt-10">
       <div className="mb-6 flex items-center justify-between gap-3 flex-wrap">
         <div>
           <h2 className="text-3xl font-black text-emerald-700">Casos prácticos</h2>

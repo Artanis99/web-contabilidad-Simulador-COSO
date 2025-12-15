@@ -4,7 +4,14 @@ import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Responsi
 const industrias = ["Tecnología", "Textil", "Servicios", "Sector Público"];
 const enfoques = ["Conservador", "Equilibrado", "Agresivo"];
 
-export default function ErmSimulator({ innerRef }) {
+const defaultAccent = {
+  titleText: "text-emerald-700",
+  rangeAccent: "accent-emerald-600",
+  buttonGradient: "from-emerald-500 to-cyan-500",
+  panelBorder: "border-emerald-50",
+};
+
+export default function ErmSimulator({ innerRef, accent = defaultAccent }) {
   const [apetito, setApetito] = useState(5);
   const [enfoque, setEnfoque] = useState("Equilibrado");
   const [industria, setIndustria] = useState(industrias[0]);
@@ -37,12 +44,12 @@ export default function ErmSimulator({ innerRef }) {
     <section id="simulador" ref={innerRef} className="max-w-6xl mx-auto px-4 mt-10 scroll-mt-24">
       <div className="mb-6 flex items-center justify-between flex-wrap gap-3">
         <div>
-          <h2 className="text-3xl font-black text-emerald-700">Simulador ERM y componentes COSO</h2>
+          <h2 className={`text-3xl font-black ${accent.titleText}`}>Simulador ERM y componentes COSO</h2>
           <p className="text-slate-600 text-sm">Ajusta apetito al riesgo, enfoque estratégico e inversión para ver el radar de madurez.</p>
         </div>
       </div>
       <div className="grid lg:grid-cols-[1.1fr_1fr] gap-6">
-        <div className="bg-white rounded-2xl shadow border border-emerald-50 p-4 sm:p-5 space-y-4">
+        <div className={`bg-white rounded-2xl shadow border ${accent.panelBorder} p-4 sm:p-5 space-y-4`}>
           <div className="space-y-2">
             <label className="text-sm font-semibold text-slate-700">Apetito al Riesgo: {apetito}</label>
             <input
@@ -51,7 +58,7 @@ export default function ErmSimulator({ innerRef }) {
               max="10"
               value={apetito}
               onChange={(e) => setApetito(Number(e.target.value))}
-              className="w-full accent-emerald-600"
+              className={`w-full ${accent.rangeAccent}`}
             />
             <div className="flex justify-between text-xs text-slate-500"><span>Bajo</span><span>Alto</span></div>
           </div>
@@ -79,7 +86,7 @@ export default function ErmSimulator({ innerRef }) {
               max="10"
               value={inversion}
               onChange={(e) => setInversion(Number(e.target.value))}
-              className="w-full accent-emerald-600"
+              className={`w-full ${accent.rangeAccent}`}
             />
             <div className="flex justify-between text-xs text-slate-500"><span>Mínima</span><span>Máxima</span></div>
           </div>
@@ -97,14 +104,14 @@ export default function ErmSimulator({ innerRef }) {
           </div>
           <button
             onClick={calcular}
-            className="w-full py-3 rounded-xl bg-gradient-to-r from-emerald-500 to-cyan-500 text-white font-bold shadow-lg hover:-translate-y-0.5 transition"
+            className={`w-full py-3 rounded-xl bg-gradient-to-r ${accent.buttonGradient} text-white font-bold shadow-lg hover:-translate-y-0.5 transition`}
           >
             Calcular riesgos
           </button>
           <div className="text-xs text-slate-500">Industria: {industria}. Ajusta sliders y botones para ver el efecto en cada componente.</div>
         </div>
-        <div className="bg-white rounded-2xl shadow border border-emerald-50 p-4 sm:p-5">
-          <h3 className="text-lg font-bold text-emerald-700 mb-3">Radar de madurez</h3>
+        <div className={`bg-white rounded-2xl shadow border ${accent.panelBorder} p-4 sm:p-5`}>
+          <h3 className={`text-lg font-bold ${accent.titleText} mb-3`}>Radar de madurez</h3>
           {resultado ? (
             <>
               <div className="h-72 sm:h-80">
