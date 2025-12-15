@@ -34,7 +34,7 @@ export default function ErmSimulator({ innerRef }) {
   }, [resultado]);
 
   return (
-    <section id="simulador" ref={innerRef} className="max-w-6xl mx-auto px-4">
+    <section id="simulador" ref={innerRef} className="max-w-6xl mx-auto px-4 mt-10 scroll-mt-24">
       <div className="mb-6 flex items-center justify-between flex-wrap gap-3">
         <div>
           <h2 className="text-3xl font-black text-emerald-700">Simulador ERM y componentes COSO</h2>
@@ -42,7 +42,7 @@ export default function ErmSimulator({ innerRef }) {
         </div>
       </div>
       <div className="grid lg:grid-cols-[1.1fr_1fr] gap-6">
-        <div className="bg-white rounded-2xl shadow border border-emerald-50 p-5 space-y-4">
+        <div className="bg-white rounded-2xl shadow border border-emerald-50 p-4 sm:p-5 space-y-4">
           <div className="space-y-2">
             <label className="text-sm font-semibold text-slate-700">Apetito al Riesgo: {apetito}</label>
             <input
@@ -88,7 +88,7 @@ export default function ErmSimulator({ innerRef }) {
             <select
               value={industria}
               onChange={(e) => setIndustria(e.target.value)}
-              className="w-full border rounded-xl px-3 py-2 text-sm"
+              className="w-full border border-slate-200 bg-white rounded-xl px-3 py-2 text-sm"
             >
               {industrias.map((i) => (
                 <option key={i}>{i}</option>
@@ -103,21 +103,47 @@ export default function ErmSimulator({ innerRef }) {
           </button>
           <div className="text-xs text-slate-500">Industria: {industria}. Ajusta sliders y botones para ver el efecto en cada componente.</div>
         </div>
-        <div className="bg-white rounded-2xl shadow border border-emerald-50 p-5">
+        <div className="bg-white rounded-2xl shadow border border-emerald-50 p-4 sm:p-5">
           <h3 className="text-lg font-bold text-emerald-700 mb-3">Radar de madurez</h3>
           {resultado ? (
             <>
-              <ResponsiveContainer width="100%" height={280}>
-                <RadarChart data={radarData}>
+              <div className="h-72 sm:h-80">
+                <ResponsiveContainer width="100%" height="100%">
+                  <RadarChart data={radarData}>
                   <PolarGrid />
-                  <PolarAngleAxis dataKey="subject" />
+                  <PolarAngleAxis dataKey="subject" tick={{ fontSize: 11, fill: "#334155" }} />
                   <PolarRadiusAxis angle={45} domain={[0, 100]} />
                   <Radar name="Actual" dataKey="actual" stroke="#2563eb" fill="#2563eb" fillOpacity={0.3} />
                   <Radar name="Objetivo" dataKey="objetivo" stroke="#22c55e" fill="#22c55e" fillOpacity={0.2} />
                   <Legend />
-                </RadarChart>
-              </ResponsiveContainer>
-              <div className="mt-4 overflow-x-auto">
+                  </RadarChart>
+                </ResponsiveContainer>
+              </div>
+
+              <div className="mt-4 sm:hidden space-y-3">
+                {resultado.datos.map((row) => (
+                  <div key={row.comp} className="rounded-xl border border-slate-200 bg-white p-3">
+                    <div className="font-semibold text-slate-800">{row.comp}</div>
+                    <div className="mt-2 grid grid-cols-2 gap-2 text-xs">
+                      <div className="rounded-lg bg-slate-50 p-2">
+                        <div className="font-bold text-slate-700">Actual</div>
+                        <div className="text-slate-600">{row.actual}%</div>
+                      </div>
+                      <div className="rounded-lg bg-slate-50 p-2">
+                        <div className="font-bold text-slate-700">Objetivo</div>
+                        <div className="text-slate-600">{row.objetivo}%</div>
+                      </div>
+                    </div>
+                    <div className="mt-2 text-xs text-slate-600">
+                      {row.actual >= row.objetivo - 5
+                        ? "Mantener controles y monitoreo."
+                        : "Incrementar recursos, automatizar y reforzar capacitación."}
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <div className="mt-4 hidden sm:block overflow-x-auto">
                 <table className="min-w-full text-sm">
                   <thead>
                     <tr className="text-left text-emerald-700">

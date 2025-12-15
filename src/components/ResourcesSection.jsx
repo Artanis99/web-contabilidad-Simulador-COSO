@@ -18,7 +18,7 @@ const recursos = [
 
 export default function ResourcesSection({ innerRef }) {
   return (
-    <section id="recursos" ref={innerRef} className="max-w-6xl mx-auto px-4">
+    <section id="recursos" ref={innerRef} className="max-w-6xl mx-auto px-4 scroll-mt-24">
       <div className="mb-6">
         <h2 className="text-3xl font-black text-emerald-700">Recursos y bibliografía</h2>
         <p className="text-slate-600 text-sm">Accede a marcos y guías esenciales para profundizar.</p>

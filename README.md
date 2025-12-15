@@ -16,23 +16,24 @@ npm install
 npm run dev
 ```
 Abre el enlace que muestra Vite (ej. http://localhost:5173). La navbar permite scroll suave a cada sección.
+> Nota: si tu entorno no permite levantar servidores (error `listen EPERM`), usa el build y abre `dist/index.html` directamente en el navegador.
 
 ## Build de producción
 ```bash
 npm run build
 npm run preview  # opcional para revisar el build
 ```
+Con `base: "./"` en `vite.config.js`, el build queda listo para abrirse sin servidor desde `dist/index.html`.
 
 ## Estructura clave
 - `src/main.jsx`: arranque de React y estilos globales.
 - `src/App.jsx`: orquestación de secciones, refs de scroll y estado compartido.
-- `src/components/`: vistas modulares (Navbar, Hero, MarcoTabs, CosoTimeline, RiskHeatMap, ErmSimulator, CasesSection, QuizSection, ResourcesSection, VideosSection).
+- `src/pages/`: páginas principales (COSO 2013 y COSO ERM 2017).
+- `src/components/`: vistas modulares (Navbar, Hero, FrameworkContent, ErmSimulator, CasesSection, QuizSection, ResourcesSection, VideosSection).
 - `src/styles/global.css`: Tailwind + ajustes básicos.
 
 ## Interactividad principal
-- **Tabs Marco COSO** (`MarcoTabs`): cambia definiciones, principios, tipos de controles, tecnología, políticas.
-- **Evolución COSO** (`CosoTimeline`): selecciona versión y resalta tabla comparativa.
-- **Mapa de calor** (`RiskHeatMap` + Recharts ScatterChart): clic en burbuja muestra detalle y controles sugeridos.
+- **Páginas COSO** (`Coso2013Page`, `CosoErm2017Page` + `FrameworkContent`): componentes, principios y simulador de caso práctico por marco.
 - **Simulador ERM** (`ErmSimulator` + RadarChart): sliders/botones calculan niveles actual vs objetivo por componente COSO.
 - **Casos** (`CasesSection`): switch entre Tech Solution y Textil, gráfico de barras antes/después.
 - **Quiz** (`QuizSection`): 5 preguntas con feedback inmediato.

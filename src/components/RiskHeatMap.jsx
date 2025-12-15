@@ -27,7 +27,7 @@ export default function RiskHeatMap({ innerRef, selection, onSelect }) {
   const data = useMemo(() => mock, []);
 
   return (
-    <section id="riesgos" ref={innerRef} className="max-w-6xl mx-auto px-4">
+    <section id="riesgos" ref={innerRef} className="max-w-6xl mx-auto px-4 scroll-mt-24">
       <div className="mb-6 flex items-center justify-between gap-3 flex-wrap">
         <div>
           <h2 className="text-3xl font-black text-emerald-700">Mapa de calor de riesgos</h2>
@@ -36,11 +36,26 @@ export default function RiskHeatMap({ innerRef, selection, onSelect }) {
       </div>
       <div className="grid md:grid-cols-[2fr_1fr] gap-6">
         <div className="bg-white rounded-2xl shadow border border-emerald-50 p-4">
-          <ResponsiveContainer width="100%" height={360}>
-            <ScatterChart margin={{ top: 10, right: 20, bottom: 20, left: 0 }}>
+          <div className="h-72 sm:h-96">
+            <ResponsiveContainer width="100%" height="100%">
+              <ScatterChart margin={{ top: 10, right: 12, bottom: 20, left: 0 }}>
               <CartesianGrid strokeDasharray="3 3" />
-              <XAxis type="number" dataKey="prob" name="Probabilidad" domain={[0, 100]} tickFormatter={(v) => `${v}%`} />
-              <YAxis type="number" dataKey="impacto" name="Impacto" domain={[0, 100]} tickFormatter={(v) => `${v}%`} />
+              <XAxis
+                type="number"
+                dataKey="prob"
+                name="Probabilidad"
+                domain={[0, 100]}
+                tick={{ fontSize: 11 }}
+                tickFormatter={(v) => `${v}%`}
+              />
+              <YAxis
+                type="number"
+                dataKey="impacto"
+                name="Impacto"
+                domain={[0, 100]}
+                tick={{ fontSize: 11 }}
+                tickFormatter={(v) => `${v}%`}
+              />
               <Tooltip cursor={{ strokeDasharray: "3 3" }} formatter={(value, name) => [`${value}%`, name]} />
               {Object.keys(palette).map((tipo) => (
                 <Scatter
@@ -51,8 +66,9 @@ export default function RiskHeatMap({ innerRef, selection, onSelect }) {
                   onClick={(d) => onSelect(d.payload)}
                 />
               ))}
-            </ScatterChart>
-          </ResponsiveContainer>
+              </ScatterChart>
+            </ResponsiveContainer>
+          </div>
           <div className="flex flex-wrap gap-3 mt-3 text-xs">
             {Object.entries(palette).map(([tipo, color]) => (
               <span key={tipo} className="flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100">
@@ -62,7 +78,7 @@ export default function RiskHeatMap({ innerRef, selection, onSelect }) {
             ))}
           </div>
         </div>
-        <div className="bg-white rounded-2xl shadow border border-emerald-50 p-5">
+        <div className="bg-white rounded-2xl shadow border border-emerald-50 p-4 sm:p-5">
           <h3 className="text-lg font-bold text-emerald-700 mb-2">Detalle del riesgo</h3>
           {selection ? (
             <div className="space-y-2 text-sm text-slate-700">

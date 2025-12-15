@@ -53,12 +53,12 @@ export default function QuizSection({ innerRef }) {
   };
 
   return (
-    <section id="evaluacion" ref={innerRef} className="max-w-6xl mx-auto px-4">
+    <section id="evaluacion" ref={innerRef} className="max-w-6xl mx-auto px-4 scroll-mt-24">
       <div className="mb-6">
         <h2 className="text-3xl font-black text-emerald-700">Evaluación rápida</h2>
         <p className="text-slate-600 text-sm">Responde y recibe retroalimentación inmediata.</p>
       </div>
-      <div className="space-y-4 bg-white rounded-2xl shadow border border-emerald-50 p-5">
+      <div className="space-y-4 bg-white rounded-2xl shadow border border-emerald-50 p-4 sm:p-5">
         {preguntas.map((p, idx) => (
           <div key={idx} className="border border-slate-100 rounded-xl p-4">
             <div className="font-semibold text-slate-800 mb-2">

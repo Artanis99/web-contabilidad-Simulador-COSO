@@ -41,16 +41,16 @@ export default function CasesSection({ innerRef }) {
   const caso = useMemo(() => casos[clave], [clave]);
 
   return (
-    <section id="casos" ref={innerRef} className="max-w-6xl mx-auto px-4">
+    <section id="casos" ref={innerRef} className="max-w-6xl mx-auto px-4 scroll-mt-24">
       <div className="mb-6 flex items-center justify-between gap-3 flex-wrap">
         <div>
           <h2 className="text-3xl font-black text-emerald-700">Casos prácticos</h2>
           <p className="text-slate-600 text-sm">Compara resultados antes y después de implementar controles COSO.</p>
         </div>
-        <div className="flex gap-2">
+        <div className="flex flex-wrap gap-2 w-full sm:w-auto">
           <button
             onClick={() => setClave("tecnologia")}
-            className={`px-4 py-2 rounded-full text-sm font-semibold ${
+            className={`flex-1 sm:flex-none px-4 py-2 rounded-full text-sm font-semibold ${
               clave === "tecnologia" ? "bg-emerald-600 text-white" : "bg-slate-100"
             }`}
           >
@@ -58,7 +58,7 @@ export default function CasesSection({ innerRef }) {
           </button>
           <button
             onClick={() => setClave("textil")}
-            className={`px-4 py-2 rounded-full text-sm font-semibold ${
+            className={`flex-1 sm:flex-none px-4 py-2 rounded-full text-sm font-semibold ${
               clave === "textil" ? "bg-emerald-600 text-white" : "bg-slate-100"
             }`}
           >
@@ -66,9 +66,9 @@ export default function CasesSection({ innerRef }) {
           </button>
         </div>
       </div>
-      <div className="bg-white rounded-2xl shadow border border-emerald-50 p-5 space-y-4">
+      <div className="bg-white rounded-2xl shadow border border-emerald-50 p-4 sm:p-5 space-y-4">
         <div className="flex flex-col md:flex-row gap-5">
-          <div className="flex-1 space-y-3">
+          <div className="flex-1 min-w-0 space-y-3">
             <h3 className="text-xl font-bold text-emerald-700">{caso.nombre}</h3>
             <p className="text-slate-700 text-sm">{caso.desc}</p>
             <div className="grid sm:grid-cols-2 gap-3 text-sm">
@@ -107,7 +107,7 @@ export default function CasesSection({ innerRef }) {
               </ul>
             </div>
           </div>
-          <div className="md:w-80 w-full h-64 bg-slate-50 rounded-xl p-3">
+          <div className="md:w-80 w-full h-56 sm:h-64 bg-slate-50 rounded-xl p-3">
             <ResponsiveContainer width="100%" height="100%">
               <BarChart data={caso.indicadores} margin={{ top: 10, right: 10, left: 0, bottom: 10 }}>
                 <CartesianGrid strokeDasharray="3 3" />
