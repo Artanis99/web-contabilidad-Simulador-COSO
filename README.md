@@ -1,46 +1,35 @@
 # Simulador Interactivo de Control Interno (COSO 2013)
 
-SPA en React + Vite + TailwindCSS con gráficos Recharts. Incluye navegación anclada, tabs de marco COSO, timeline de evolución, mapa de calor de riesgos, simulador ERM con radar, casos comparativos, quiz, recursos y videos.
+SPA en React + Vite + TailwindCSS con gráficos (Recharts). Incluye navegación anclada, tabs del marco COSO, timeline de evolución, mapa de calor de riesgos, simulador ERM con radar, casos comparativos, quiz, recursos y videos.
+
+## Documentación
+- Manual de usuario: `MANUAL_USUARIO.md`
 
 ## Requisitos
 - Node.js 18+ (recomendado 20+)
 - npm
 
-## Instalación (manual)
+## Inicio rápido
 ```bash
 npm install
-```
-
-## Desarrollo
-```bash
 npm run dev
 ```
-Abre el enlace que muestra Vite (ej. http://localhost:5173).
+
+Abre el enlace que muestra Vite (por defecto `http://localhost:5173`).
+
+## Scripts
+```bash
+npm run dev      # desarrollo
+npm run build    # build de producción en /dist
+npm run preview  # servir el build para validación local
+```
 
 ## Build de producción
 ```bash
 npm run build
 npm run preview  # opcional para revisar el build
 ```
-Con `base: "./"` en `vite.config.js`, el build queda listo para abrirse sin servidor desde `dist/index.html`.
-
-## Despliegue en Windows (desde 0)
-Scripts incluidos:
-- PowerShell: `scripts/deploy.ps1`
-- CMD wrapper: `scripts/deploy.cmd`
-
-Ejemplos:
-```bat
-scripts\deploy.cmd dev
-scripts\deploy.cmd build
-scripts\deploy.cmd preview 4173 0.0.0.0
-```
-
-En PowerShell:
-```powershell
-powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\deploy.ps1 -Mode dev
-powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\deploy.ps1 -Mode dev -CleanNodeModules -CleanDist
-```
+Con `base: "./"` en `vite.config.js`, el build queda listo para abrirse sin servidor desde `dist/index.html` (por ejemplo, con doble clic en Windows).
 
 ## Acceso público (ngrok / Cloudflare Tunnel)
 Este proyecto valida hosts por seguridad (Vite `server.allowedHosts`). Ya está configurado para:
