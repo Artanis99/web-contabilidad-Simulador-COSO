@@ -11,7 +11,7 @@ export default function Navbar({ currentRoute, onNavigate }) {
     { id: "casos", label: "Casos", kind: "section" },
     { id: "evaluacion", label: "Evaluación", kind: "section" },
     { id: "recursos", label: "Recursos", kind: "section" },
-    { id: "videos", label: "Comparación", kind: "section" },
+    { id: "videos", label: "Videos", kind: "section" },
   ];
 
   const handleNavigate = (link) => {

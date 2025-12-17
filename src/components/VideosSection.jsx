@@ -2,7 +2,7 @@ export default function VideosSection({ innerRef }) {
   return (
     <section id="videos" ref={innerRef} className="max-w-6xl mx-auto px-4 scroll-mt-24">
       <div className="mb-6">
-        <h2 className="text-3xl font-black text-emerald-700">Comparación de COSO 2013 y COSO ERM 2017</h2>
+        <h2 className="text-3xl font-black text-emerald-700">Videos</h2>
         <p className="text-slate-600 text-sm">Videos para reforzar similitudes, diferencias y aplicación práctica.</p>
       </div>
       <div className="grid md:grid-cols-2 gap-4">
