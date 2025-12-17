@@ -43,11 +43,49 @@ export default function CosoErm2017Page() {
             </div>
           </div>
         </div>
+
+        <div className="mt-6 grid lg:grid-cols-3 gap-3">
+          <div className="lg:col-span-2 rounded-3xl border border-slate-200 bg-white p-5 sm:p-6">
+            <div className="text-sm font-extrabold text-slate-900">Qué encontrarás aquí</div>
+            <div className="mt-3 grid sm:grid-cols-3 gap-3 text-sm">
+              <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
+                <div className="text-xs font-bold text-slate-500">Bloque 1</div>
+                <div className="font-extrabold text-indigo-900 mt-1">Marco ERM</div>
+                <div className="text-xs text-slate-600 mt-1">Cultura, estrategia, desempeño y revisión.</div>
+              </div>
+              <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
+                <div className="text-xs font-bold text-slate-500">Bloque 2</div>
+                <div className="font-extrabold text-indigo-900 mt-1">Componentes</div>
+                <div className="text-xs text-slate-600 mt-1">Principios con evidencias típicas.</div>
+              </div>
+              <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
+                <div className="text-xs font-bold text-slate-500">Bloque 3</div>
+                <div className="font-extrabold text-indigo-900 mt-1">Simuladores</div>
+                <div className="text-xs text-slate-600 mt-1">Caso práctico + radar ERM.</div>
+              </div>
+            </div>
+          </div>
+
+          <a
+            href="#/coso-2013"
+            className="rounded-3xl border border-emerald-200/60 bg-gradient-to-br from-emerald-50 via-white to-cyan-50 p-5 sm:p-6 hover:border-emerald-200 transition"
+          >
+            <div className="text-xs font-bold text-slate-600">Base de control interno</div>
+            <div className="mt-1 text-lg font-black text-emerald-900">COSO 2013</div>
+            <div className="mt-2 text-sm text-slate-700">
+              Ideal para diseñar y monitorear controles por procesos: 5 componentes y 17 principios.
+            </div>
+            <div className="mt-4 inline-flex items-center gap-2 text-sm font-bold text-emerald-700">
+              Ir a COSO 2013 <span aria-hidden="true">→</span>
+            </div>
+          </a>
+        </div>
       </div>
 
       <div className="mt-10">
         <FrameworkContent
           frameworkId="cosoErm2017"
+          idPrefix="cosoErm2017"
           accent={{
             primaryText: "text-indigo-700",
             primaryTextStrong: "text-indigo-900",
@@ -72,6 +110,9 @@ export default function CosoErm2017Page() {
             rangeAccent: "accent-indigo-600",
             buttonGradient: "from-indigo-600 to-sky-600",
             panelBorder: "border-indigo-100",
+            selectedButton: "bg-indigo-600 text-white border-indigo-700",
+            unselectedButton: "bg-slate-50 border-slate-200 text-slate-800 hover:border-indigo-200",
+            tableHeadText: "text-indigo-700",
           }}
         />
       </div>

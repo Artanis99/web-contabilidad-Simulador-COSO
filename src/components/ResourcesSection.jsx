@@ -1,15 +1,5 @@
 const recursos = [
   {
-    titulo: "COSO (2013) — Internal Control - Integrated Framework",
-    link: "https://www.coso.org/Documents/2013-Internal-Control-Integrated-Framework.pdf",
-    desc: "Committee of Sponsoring Organizations of the Treadway Commission. (2013). Internal Control - Integrated Framework. COSO.",
-  },
-  {
-    titulo: "COSO (2017) — Enterprise Risk Management (Executive Summary)",
-    link: "https://www.coso.org/Documents/2017-COSO-ERM-Integrating-with-Strategy-and-Performance-Executive-Summary.pdf",
-    desc: "Committee of Sponsoring Organizations of the Treadway Commission. (2017). Enterprise Risk Management.",
-  },
-  {
     titulo: "D'Aquila (2016) — COSO’s updated Internal Control–Integrated Framework",
     link: "https://www.cpajournal.com/",
     desc: "D'Aquila. (2016). COSOs updated Internal ControlIntegrated Framework: Are you ready?",
@@ -28,6 +18,16 @@ const recursos = [
     titulo: "Miles et al. (2017) — Resumen ejecutivo COSO ERM (ES)",
     link: "https://iaiecuador.org/documentos/Resumen_ejecutivo_cosoERM.pdf",
     desc: "Miles, E., Chesley, D., & Martens, F. (2017). Gestión del Riesgo Empresarial Integrado Estrategia y Desempeño.",
+  },
+  {
+    titulo: "Guía para la supervisión de control interno (COSO IV)",
+    link: "https://iaiecuador.org/producto/guia-para-la-supervision-de-control-interno-coso-iv/",
+    desc: "Recurso orientado a supervisión/monitoreo del control interno (alineado a COSO) con enfoque práctico para gobierno y auditoría.",
+  },
+  {
+    titulo: "COSO ERM — Gestión de Riesgo Empresarial",
+    link: "https://iaiecuador.org/producto/coso-erm-gestion-de-riesgo-empresarial/",
+    desc: "Material de referencia sobre ERM y su aplicación en organizaciones (gobernanza, estrategia, desempeño y reporte).",
   },
 ];
 

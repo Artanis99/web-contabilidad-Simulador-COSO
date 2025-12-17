@@ -1,17 +1,24 @@
-const bullets = [
-  "Control interno como columna vertebral de eficiencia, cumplimiento y transparencia.",
-  "Alinea objetivos operacionales, de información y regulatorios con la estrategia.",
-  "Integra a toda la organización: dirección, mandos medios y equipos operativos.",
-  "COSO 2013 aporta 5 componentes y 17 principios como marco integrado.",
-  "COSO ERM 2017 amplía la mirada al riesgo estratégico y desempeño.",
-  "La gestión de riesgos es dinámica y se adapta a cambios del entorno.",
-  "Evaluar, diseñar, implementar y monitorear: ciclo de mejora continua.",
-  "Indicadores y radar ayudan a priorizar y comunicar brechas de control.",
-  "Casos reales permiten aterrizar conceptos en decisiones prácticas.",
-  "Tecnología y datos habilitan información y comunicación confiable.",
+const learning = [
+  "Cómo se conectan objetivos, riesgos, controles y evidencias.",
+  "Diferencias clave entre COSO 2013 (Control Interno) y ERM 2017 (Riesgo + Estrategia).",
+  "Cómo interpretar madurez y priorizar planes de acción.",
+  "Cómo comunicar hallazgos a dirección (resumen ejecutivo y focos).",
+];
+
+const deliverables = [
+  "Matriz de riesgos (inherente vs residual)",
+  "Mapa de controles y evidencias",
+  "Planes de mitigación (dueño, fecha, métrica)",
+  "Tablero KPI/KRI y monitoreo",
 ];
 
 export default function Hero({ innerRef, onStart }) {
+  const scrollTo = (id) => {
+    const node = document.getElementById(id);
+    if (!node) return;
+    node.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
   return (
     <section
       id="inicio"
@@ -21,19 +28,42 @@ export default function Hero({ innerRef, onStart }) {
       <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-8 items-center">
         <div className="space-y-5">
           <p className="text-xs uppercase tracking-[0.3em] text-white/70 font-semibold">
-            Simulador Interactivo de Control Interno y COSO 2013
+            Simulador Interactivo · COSO 2013 & COSO ERM 2017
           </p>
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black leading-tight">
             Gestiona riesgos, visualiza brechas y prioriza acciones en minutos
           </h1>
-          <ul className="grid sm:grid-cols-2 gap-2 text-sm bg-white/10 p-4 rounded-2xl shadow-inner">
-            {bullets.map((b) => (
-              <li key={b} className="flex items-start gap-2">
-                <span className="mt-[6px] w-2 h-2 rounded-full bg-emerald-200" />
-                <span>{b}</span>
-              </li>
-            ))}
-          </ul>
+
+          <div className="grid sm:grid-cols-2 gap-3">
+            <div className="bg-white/10 border border-white/20 rounded-2xl p-4">
+              <div className="text-xs font-bold text-white/80">Lo que aprenderás</div>
+              <ul className="mt-3 space-y-2 text-sm">
+                {learning.map((item) => (
+                  <li key={item} className="flex items-start gap-2">
+                    <span className="mt-[6px] w-2 h-2 rounded-full bg-emerald-200" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="bg-white/10 border border-white/20 rounded-2xl p-4">
+              <div className="text-xs font-bold text-white/80">Entregables típicos</div>
+              <div className="mt-3 flex flex-wrap gap-2">
+                {deliverables.map((item) => (
+                  <span
+                    key={item}
+                    className="px-3 py-1.5 rounded-full text-xs bg-white/10 border border-white/20 text-white/90"
+                  >
+                    {item}
+                  </span>
+                ))}
+              </div>
+              <div className="mt-3 text-xs text-white/70">
+                Úsalos como checklist para auditoría interna, compliance o mejora de procesos.
+              </div>
+            </div>
+          </div>
+
           <div className="flex flex-wrap gap-3">
             <button
               onClick={onStart}
@@ -47,29 +77,95 @@ export default function Hero({ innerRef, onStart }) {
             >
               Ver COSO 2013
             </a>
+            <a
+              href="#/coso-erm-2017"
+              className="px-5 py-3 rounded-full border border-white/50 text-white font-semibold hover:bg-white/10 transition"
+            >
+              Ver COSO ERM 2017
+            </a>
+          </div>
+
+          <div className="flex flex-wrap gap-2">
+            <button
+              type="button"
+              onClick={() => scrollTo("casos")}
+              className="px-4 py-2 rounded-full bg-white/10 border border-white/20 text-sm font-semibold hover:bg-white/15 transition"
+            >
+              Ver casos
+            </button>
+            <button
+              type="button"
+              onClick={() => scrollTo("evaluacion")}
+              className="px-4 py-2 rounded-full bg-white/10 border border-white/20 text-sm font-semibold hover:bg-white/15 transition"
+            >
+              Hacer evaluación
+            </button>
+            <button
+              type="button"
+              onClick={() => scrollTo("recursos")}
+              className="px-4 py-2 rounded-full bg-white/10 border border-white/20 text-sm font-semibold hover:bg-white/15 transition"
+            >
+              Abrir recursos
+            </button>
+            <button
+              type="button"
+              onClick={() => scrollTo("videos")}
+              className="px-4 py-2 rounded-full bg-white/10 border border-white/20 text-sm font-semibold hover:bg-white/15 transition"
+            >
+              Ver comparación
+            </button>
           </div>
         </div>
-        <div className="bg-white/15 border border-white/20 rounded-3xl p-4 sm:p-6 shadow-lg">
-          <div className="text-sm text-white/90">
-            Explora COSO 2013 (Control Interno) y COSO ERM 2017 (Gestión de Riesgos Empresariales) para entender
-            cómo se conectan gobernanza, estrategia, desempeño y controles en la práctica.
+        <div className="space-y-4">
+          <div className="bg-white/15 border border-white/20 rounded-3xl p-4 sm:p-6 shadow-lg">
+            <div className="text-sm text-white/90">
+              Explora COSO 2013 (Control Interno) y COSO ERM 2017 (Riesgo + Estrategia + Desempeño) para entender
+              cómo se conectan gobernanza, procesos, información, decisiones y monitoreo.
+            </div>
+            <div className="grid grid-cols-2 gap-4 mt-6 text-center text-sm">
+              <div className="bg-white/10 rounded-2xl p-4">
+                <div className="text-3xl font-black">5</div>
+                Componentes COSO 2013
+              </div>
+              <div className="bg-white/10 rounded-2xl p-4">
+                <div className="text-3xl font-black">17</div>
+                Principios COSO 2013
+              </div>
+              <div className="bg-white/10 rounded-2xl p-4">
+                <div className="text-3xl font-black">5</div>
+                Componentes COSO ERM 2017
+              </div>
+              <div className="bg-white/10 rounded-2xl p-4">
+                <div className="text-3xl font-black">20</div>
+                Principios COSO ERM 2017
+              </div>
+            </div>
           </div>
-          <div className="grid grid-cols-2 gap-4 mt-6 text-center text-sm">
-            <div className="bg-white/10 rounded-2xl p-4">
-              <div className="text-3xl font-black">5</div>
-              Componentes COSO 2013
+
+          <div className="bg-white/15 border border-white/20 rounded-3xl p-4 sm:p-6 shadow-lg">
+            <div className="text-sm font-extrabold text-white">¿Qué marco usar?</div>
+            <div className="mt-3 grid sm:grid-cols-2 gap-3 text-sm">
+              <a href="#/coso-2013" className="rounded-2xl bg-white/10 border border-white/20 p-4 hover:bg-white/15 transition">
+                <div className="font-black">COSO 2013</div>
+                <div className="text-white/80 text-xs mt-1">Cuando tu foco es procesos, controles y evidencia.</div>
+                <ul className="mt-3 space-y-1 text-xs text-white/85">
+                  <li>• Segregación, autorizaciones, conciliaciones</li>
+                  <li>• Confiabilidad de información</li>
+                  <li>• Cumplimiento y auditoría</li>
+                </ul>
+              </a>
+              <a href="#/coso-erm-2017" className="rounded-2xl bg-white/10 border border-white/20 p-4 hover:bg-white/15 transition">
+                <div className="font-black">COSO ERM 2017</div>
+                <div className="text-white/80 text-xs mt-1">Cuando tu foco es estrategia, apetito y portafolio de riesgos.</div>
+                <ul className="mt-3 space-y-1 text-xs text-white/85">
+                  <li>• Decisiones bajo incertidumbre</li>
+                  <li>• KRIs y desempeño</li>
+                  <li>• Revisión y mejora continua</li>
+                </ul>
+              </a>
             </div>
-            <div className="bg-white/10 rounded-2xl p-4">
-              <div className="text-3xl font-black">17</div>
-              Principios COSO 2013
-            </div>
-            <div className="bg-white/10 rounded-2xl p-4">
-              <div className="text-3xl font-black">5</div>
-              Componentes COSO ERM 2017
-            </div>
-            <div className="bg-white/10 rounded-2xl p-4">
-              <div className="text-3xl font-black">20</div>
-              Principios COSO ERM 2017
+            <div className="mt-3 text-xs text-white/70">
+              Recomendación práctica: usa COSO 2013 para “aterrizar” controles y ERM 2017 para “alinear” riesgo con estrategia.
             </div>
           </div>
         </div>

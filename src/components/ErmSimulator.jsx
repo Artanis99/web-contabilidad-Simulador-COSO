@@ -9,6 +9,9 @@ const defaultAccent = {
   rangeAccent: "accent-emerald-600",
   buttonGradient: "from-emerald-500 to-cyan-500",
   panelBorder: "border-emerald-50",
+  selectedButton: "bg-emerald-600 text-white border-emerald-700",
+  unselectedButton: "bg-slate-50 border-slate-200 text-slate-800 hover:border-slate-300",
+  tableHeadText: "text-emerald-700",
 };
 
 export default function ErmSimulator({ innerRef, accent = defaultAccent }) {
@@ -70,7 +73,7 @@ export default function ErmSimulator({ innerRef, accent = defaultAccent }) {
                   key={e}
                   onClick={() => setEnfoque(e)}
                   className={`rounded-xl px-4 py-3 font-semibold border transition ${
-                    enfoque === e ? "bg-emerald-600 text-white border-emerald-700" : "bg-slate-50 border-slate-200"
+                    enfoque === e ? accent.selectedButton : accent.unselectedButton
                   }`}
                 >
                   {e}
@@ -153,7 +156,7 @@ export default function ErmSimulator({ innerRef, accent = defaultAccent }) {
               <div className="mt-4 hidden sm:block overflow-x-auto">
                 <table className="min-w-full text-sm">
                   <thead>
-                    <tr className="text-left text-emerald-700">
+                    <tr className={`text-left ${accent.tableHeadText}`}>
                       <th className="py-2">Componente</th>
                       <th className="py-2">Actual %</th>
                       <th className="py-2">Objetivo %</th>

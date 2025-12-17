@@ -1,5 +1,6 @@
 import { Suspense, lazy, useEffect, useMemo, useRef, useState, createRef } from "react";
 import Navbar from "./components/Navbar";
+import BackToTopButton from "./components/BackToTopButton";
 import Hero from "./components/Hero";
 import CasesSection from "./components/CasesSection";
 import QuizSection from "./components/QuizSection";
@@ -87,6 +88,7 @@ export default function App() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-emerald-50 text-slate-900">
       <Navbar currentRoute={currentRoute} onNavigate={navigate} />
+      <BackToTopButton />
       {currentRoute === "coso2013" ? (
         <Suspense fallback={<div className="pt-28 px-4 max-w-6xl mx-auto text-slate-600">Cargando…</div>}>
           <Coso2013Page />

@@ -42,11 +42,49 @@ export default function Coso2013Page() {
             </div>
           </div>
         </div>
+
+        <div className="mt-6 grid lg:grid-cols-3 gap-3">
+          <div className="lg:col-span-2 rounded-3xl border border-slate-200 bg-white p-5 sm:p-6">
+            <div className="text-sm font-extrabold text-slate-900">Cómo usar esta página</div>
+            <ol className="mt-3 grid sm:grid-cols-3 gap-3 text-sm">
+              <li className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
+                <div className="text-xs font-bold text-slate-500">Paso 1</div>
+                <div className="font-extrabold text-emerald-900 mt-1">Lee el resumen</div>
+                <div className="text-xs text-slate-600 mt-1">Objetivos, ideas clave y limitaciones.</div>
+              </li>
+              <li className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
+                <div className="text-xs font-bold text-slate-500">Paso 2</div>
+                <div className="font-extrabold text-emerald-900 mt-1">Explora componentes</div>
+                <div className="text-xs text-slate-600 mt-1">Principios, significado y evidencias.</div>
+              </li>
+              <li className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
+                <div className="text-xs font-bold text-slate-500">Paso 3</div>
+                <div className="font-extrabold text-emerald-900 mt-1">Simula un caso</div>
+                <div className="text-xs text-slate-600 mt-1">Ajusta niveles y detecta focos.</div>
+              </li>
+            </ol>
+          </div>
+
+          <a
+            href="#/coso-erm-2017"
+            className="rounded-3xl border border-indigo-200/60 bg-gradient-to-br from-indigo-50 via-white to-sky-50 p-5 sm:p-6 hover:border-indigo-200 transition"
+          >
+            <div className="text-xs font-bold text-slate-600">También te puede servir</div>
+            <div className="mt-1 text-lg font-black text-indigo-900">COSO ERM 2017</div>
+            <div className="mt-2 text-sm text-slate-700">
+              Cuando el foco es estrategia, apetito al riesgo y desempeño, complementa COSO 2013.
+            </div>
+            <div className="mt-4 inline-flex items-center gap-2 text-sm font-bold text-indigo-700">
+              Ir a ERM 2017 <span aria-hidden="true">→</span>
+            </div>
+          </a>
+        </div>
       </div>
 
       <div className="mt-10">
         <FrameworkContent
           frameworkId="coso2013"
+          idPrefix="coso2013"
           accent={{
             primaryText: "text-emerald-700",
             primaryTextStrong: "text-emerald-900",
