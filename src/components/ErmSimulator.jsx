@@ -47,7 +47,7 @@ export default function ErmSimulator({ innerRef, accent = defaultAccent }) {
     <section id="simulador" ref={innerRef} className="max-w-6xl mx-auto px-4 mt-10 scroll-mt-24">
       <div className="mb-6 flex items-center justify-between flex-wrap gap-3">
         <div>
-          <h2 className={`text-3xl font-black ${accent.titleText}`}>Simulador ERM y componentes COSO</h2>
+          <h2 className={`text-3xl font-black ${accent.titleText}`}>Apetito al riesgo</h2>
           <p className="text-slate-600 text-sm">Ajusta apetito al riesgo, enfoque estratégico e inversión para ver el radar de madurez.</p>
         </div>
       </div>

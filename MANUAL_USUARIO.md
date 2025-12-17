@@ -81,7 +81,7 @@ Bloque de introducción con ideas clave (y, cuando aplica, objetivos, limitacion
 - Ajusta el nivel por componente (0–100).
 - Revisa el **radar** y los **focos sugeridos** para priorizar mejoras.
 
-En **COSO ERM 2017** además hay un simulador adicional para ajustar parámetros (apetito, enfoque, inversión, industria) y visualizar resultados.
+En **COSO 2013** además hay un simulador adicional para ajustar parámetros (apetito, enfoque, inversión, industria) y visualizar resultados.
 
 ---
 
@@ -90,4 +90,3 @@ En **COSO ERM 2017** además hay un simulador adicional para ajustar parámetros
 2. Entra a **COSO ERM 2017** para ver cómo el riesgo se integra a estrategia y desempeño.
 3. Practica con un **caso** y ajusta niveles para identificar brechas.
 4. Usa la **evaluación** para reforzar conceptos.
-

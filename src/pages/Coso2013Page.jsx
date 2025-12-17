@@ -1,4 +1,5 @@
 import FrameworkContent from "../components/FrameworkContent";
+import ErmSimulator from "../components/ErmSimulator";
 
 export default function Coso2013Page() {
   return (
@@ -100,6 +101,10 @@ export default function Coso2013Page() {
             chartBaseFill: "#94a3b8",
           }}
         />
+      </div>
+
+      <div className="mt-10">
+        <ErmSimulator />
       </div>
     </div>
   );

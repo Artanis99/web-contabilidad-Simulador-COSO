@@ -52,7 +52,7 @@ Si aparece `Blocked request. This host (...) is not allowed`, agrega el dominio 
 ## Interactividad principal
 - **Páginas COSO** (`Coso2013Page`, `CosoErm2017Page` + `FrameworkContent`): componentes, principios y simulador de caso práctico por marco.
 - **Radar por marco** (`FrameworkContent`): radar sincronizado con el “Simulador de caso práctico” (línea base vs ajuste actual).
-- **Simulador ERM** (`ErmSimulator` + RadarChart): disponible dentro de la página **COSO ERM 2017**.
+- **Simulador ERM** (`ErmSimulator` + RadarChart): disponible dentro de la página **COSO 2013** (al final).
 - **Casos** (`CasesSection`): switch entre Tech Solution y Textil, gráfico de barras antes/después.
 - **Quiz** (`QuizSection`): 5 preguntas con feedback inmediato.
 

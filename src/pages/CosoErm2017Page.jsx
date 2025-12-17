@@ -1,5 +1,4 @@
 import FrameworkContent from "../components/FrameworkContent";
-import ErmSimulator from "../components/ErmSimulator";
 
 export default function CosoErm2017Page() {
   return (
@@ -99,20 +98,6 @@ export default function CosoErm2017Page() {
             chartActualFill: "#6366f1",
             chartBaseStroke: "#94a3b8",
             chartBaseFill: "#94a3b8",
-          }}
-        />
-      </div>
-
-      <div className="mt-10">
-        <ErmSimulator
-          accent={{
-            titleText: "text-indigo-700",
-            rangeAccent: "accent-indigo-600",
-            buttonGradient: "from-indigo-600 to-sky-600",
-            panelBorder: "border-indigo-100",
-            selectedButton: "bg-indigo-600 text-white border-indigo-700",
-            unselectedButton: "bg-slate-50 border-slate-200 text-slate-800 hover:border-indigo-200",
-            tableHeadText: "text-indigo-700",
           }}
         />
       </div>
