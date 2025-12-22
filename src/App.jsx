@@ -7,6 +7,7 @@ import CasesSection from "./components/CasesSection";
 import QuizSection from "./components/QuizSection";
 import ResourcesSection from "./components/ResourcesSection";
 import VideosSection from "./components/VideosSection";
+import Footer from "./components/Footer";
 
 const Coso2013Page = lazy(() => import("./pages/Coso2013Page"));
 const CosoErm2017Page = lazy(() => import("./pages/CosoErm2017Page"));
@@ -94,7 +95,7 @@ export default function App() {
         isHome ? "bg-gradient-to-br from-[#fff7e3] via-white to-[#e9f3ee]" : "bg-gradient-to-br from-slate-50 via-white to-emerald-50",
       ].join(" ")}
     >
-      <Navbar currentRoute={currentRoute} onNavigate={navigate} isHome={isHome} />
+      <Navbar currentRoute={currentRoute} onNavigate={navigate} />
       <BackToTopButton isHome={isHome} />
       {currentRoute === "coso2013" ? (
         <Suspense fallback={<div className="pt-28 px-4 max-w-6xl mx-auto text-slate-600">Cargando…</div>}>
@@ -116,6 +117,7 @@ export default function App() {
           </main>
         </>
       )}
+      <Footer />
     </div>
   );
 }

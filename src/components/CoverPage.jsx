@@ -1,6 +1,3 @@
-import unsaacLogo from "../../imagenes/Escudo_UNSAAC.png";
-import facultyLogo from "../../imagenes/descarga.png";
-
 const members = [
   "Ayme Percca Dany Javier",
   "Bocangelino Ccante Rony Aldair",
@@ -59,12 +56,12 @@ export default function CoverPage({ innerRef }) {
           <div className="bg-white/12 border border-white/25 rounded-[2.5rem] p-6 sm:p-8 shadow-2xl">
             <div className="flex flex-col sm:flex-row items-center gap-6">
               <img
-                src={unsaacLogo}
+                src="/imagenes/Escudo_UNSAAC.png"
                 alt="Escudo de la UNSAAC"
                 className="h-56 w-auto sm:h-64 lg:h-72 drop-shadow-[0_20px_35px_rgba(0,0,0,0.35)]"
               />
               <img
-                src={facultyLogo}
+                src="/imagenes/descarga.png"
                 alt="Logo de la Facultad de Ciencias Contables y Financieras"
                 className="h-28 w-auto sm:h-32 lg:h-36 drop-shadow-[0_12px_24px_rgba(0,0,0,0.25)]"
               />
