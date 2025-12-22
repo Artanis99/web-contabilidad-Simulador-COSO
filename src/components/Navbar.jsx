@@ -24,8 +24,17 @@ export default function Navbar({ currentRoute, onNavigate }) {
     <header className="fixed top-0 left-0 right-0 z-30 shadow-sm">
       <div className="bg-[#0b1d3b] text-white">
         <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between gap-4">
-          <div className="text-xs uppercase tracking-[0.35em] text-white/70 font-semibold hidden sm:block">
-            Simulador COSO
+          <div className="flex items-center gap-3">
+            <img src="/imagenes/Escudo_UNSAAC.png" alt="Escudo UNSAAC" className="h-14 w-auto" />
+            <div className="leading-tight">
+              <div className="text-xl font-black tracking-wide">UNSAAC</div>
+              <div className="text-[11px] uppercase text-white/80">
+                Universidad Nacional de San Antonio Abad del Cusco
+              </div>
+            </div>
+            <div className="hidden sm:block text-[10px] uppercase tracking-[0.25em] text-white/70">
+              332 años
+            </div>
           </div>
 
           <button
@@ -54,7 +63,6 @@ export default function Navbar({ currentRoute, onNavigate }) {
               </div>
             </div>
             <div className="flex items-center gap-2">
-              <img src="/imagenes/Escudo_UNSAAC.png" alt="Escudo UNSAAC" className="h-12 w-auto" />
               <img
                 src="/imagenes/facultad.png"
                 alt="Logo Facultad de Ciencias Contables y Financieras"
