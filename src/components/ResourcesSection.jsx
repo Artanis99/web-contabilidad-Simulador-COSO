@@ -35,20 +35,20 @@ export default function ResourcesSection({ innerRef }) {
   return (
     <section id="recursos" ref={innerRef} className="max-w-6xl mx-auto px-4 scroll-mt-24">
       <div className="mb-6">
-        <h2 className="text-3xl font-black text-emerald-700">Recursos y bibliografía</h2>
+        <h2 className="text-3xl font-black text-[#0b1d3b]">Recursos y bibliografía</h2>
         <p className="text-slate-600 text-sm">Accede a marcos y guías esenciales para profundizar.</p>
       </div>
       <div className="grid md:grid-cols-3 gap-4">
         {recursos.map((r) => (
-          <div key={r.titulo} className="bg-white rounded-2xl shadow border border-emerald-50 p-4 space-y-2">
-            <div className="font-bold text-emerald-700">{r.titulo}</div>
+          <div key={r.titulo} className="bg-white rounded-2xl shadow border border-[#f0e2c1] p-4 space-y-2">
+            <div className="font-bold text-[#0b1d3b]">{r.titulo}</div>
             <p className="text-sm text-slate-700">{r.desc}</p>
             {r.link ? (
               <a
                 href={r.link}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex px-4 py-2 text-sm rounded-full bg-emerald-600 text-white font-semibold"
+                className="inline-flex px-4 py-2 text-sm rounded-full bg-[#1f6b4a] text-white font-semibold"
               >
                 Abrir enlace
               </a>

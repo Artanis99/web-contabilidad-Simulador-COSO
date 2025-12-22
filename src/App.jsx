@@ -1,6 +1,7 @@
 import { Suspense, lazy, useEffect, useMemo, useRef, useState, createRef } from "react";
 import Navbar from "./components/Navbar";
 import BackToTopButton from "./components/BackToTopButton";
+import CoverPage from "./components/CoverPage";
 import Hero from "./components/Hero";
 import CasesSection from "./components/CasesSection";
 import QuizSection from "./components/QuizSection";
@@ -29,6 +30,7 @@ function hashForRoute(route) {
 export default function App() {
   const [currentRoute, setCurrentRoute] = useState(parseRouteFromHash(window.location.hash));
   const pendingHomeScrollRef = useRef(null);
+  const isHome = currentRoute === "home";
 
   // refs creados una sola vez sin violar reglas de hooks
   const sectionsRef = useMemo(() => {
@@ -86,9 +88,14 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-emerald-50 text-slate-900">
-      <Navbar currentRoute={currentRoute} onNavigate={navigate} />
-      <BackToTopButton />
+    <div
+      className={[
+        "min-h-screen text-slate-900",
+        isHome ? "bg-gradient-to-br from-[#fff7e3] via-white to-[#e9f3ee]" : "bg-gradient-to-br from-slate-50 via-white to-emerald-50",
+      ].join(" ")}
+    >
+      <Navbar currentRoute={currentRoute} onNavigate={navigate} isHome={isHome} />
+      <BackToTopButton isHome={isHome} />
       {currentRoute === "coso2013" ? (
         <Suspense fallback={<div className="pt-28 px-4 max-w-6xl mx-auto text-slate-600">Cargando…</div>}>
           <Coso2013Page />
@@ -99,7 +106,8 @@ export default function App() {
         </Suspense>
       ) : (
         <>
-          <Hero innerRef={sectionsRef.inicio.ref} onStart={() => navigate("cosoErm2017")} />
+          <CoverPage innerRef={sectionsRef.inicio.ref} />
+          <Hero onStart={() => navigate("cosoErm2017")} />
           <main className="space-y-16 sm:space-y-20 pb-20 sm:pb-24">
             <CasesSection innerRef={sectionsRef.casos.ref} />
             <QuizSection innerRef={sectionsRef.evaluacion.ref} />

@@ -55,10 +55,10 @@ export default function QuizSection({ innerRef }) {
   return (
     <section id="evaluacion" ref={innerRef} className="max-w-6xl mx-auto px-4 scroll-mt-24">
       <div className="mb-6">
-        <h2 className="text-3xl font-black text-emerald-700">Evaluación rápida</h2>
+        <h2 className="text-3xl font-black text-[#0b1d3b]">Evaluación rápida</h2>
         <p className="text-slate-600 text-sm">Responde y recibe retroalimentación inmediata.</p>
       </div>
-      <div className="space-y-4 bg-white rounded-2xl shadow border border-emerald-50 p-4 sm:p-5">
+      <div className="space-y-4 bg-white rounded-2xl shadow border border-[#f0e2c1] p-4 sm:p-5">
         {preguntas.map((p, idx) => (
           <div key={idx} className="border border-slate-100 rounded-xl p-4">
             <div className="font-semibold text-slate-800 mb-2">
@@ -70,8 +70,8 @@ export default function QuizSection({ innerRef }) {
                   key={opIdx}
                   className={`flex items-center gap-2 p-3 rounded-lg border cursor-pointer ${
                     respuestas[idx] === opIdx
-                      ? "border-emerald-500 bg-emerald-50"
-                      : "border-slate-200 hover:border-emerald-200"
+                      ? "border-[#1f6b4a] bg-[#e9f3ee]"
+                      : "border-slate-200 hover:border-[#c7a04a]"
                   }`}
                 >
                   <input
@@ -87,7 +87,7 @@ export default function QuizSection({ innerRef }) {
             {resultado && (
               <div
                 className={`mt-2 text-xs font-semibold ${
-                  resultado.detalle[idx].correcta ? "text-emerald-700" : "text-orange-600"
+                  resultado.detalle[idx].correcta ? "text-[#1f6b4a]" : "text-[#b11e2c]"
                 }`}
               >
                 {resultado.detalle[idx].correcta ? "Correcto. " : "Revisa: "}
@@ -98,12 +98,12 @@ export default function QuizSection({ innerRef }) {
         ))}
         <button
           onClick={enviar}
-          className="w-full md:w-auto px-6 py-3 rounded-xl bg-gradient-to-r from-emerald-500 to-sky-500 text-white font-bold shadow-lg"
+          className="w-full md:w-auto px-6 py-3 rounded-xl bg-gradient-to-r from-[#0b1d3b] to-[#1f6b4a] text-white font-bold shadow-lg"
         >
           Enviar respuestas
         </button>
         {resultado && (
-          <div className="mt-4 p-4 rounded-xl bg-emerald-50 border border-emerald-100 text-emerald-800 font-semibold">
+          <div className="mt-4 p-4 rounded-xl bg-[#f7f0dd] border border-[#ead9b2] text-[#0b1d3b] font-semibold">
             Puntaje: {resultado.puntaje}% ¡Sigue practicando para dominar COSO!
           </div>
         )}

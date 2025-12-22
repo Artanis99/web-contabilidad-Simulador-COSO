@@ -12,7 +12,7 @@ const deliverables = [
   "Tablero KPI/KRI y monitoreo",
 ];
 
-export default function Hero({ innerRef, onStart }) {
+export default function Hero({ onStart }) {
   const scrollTo = (id) => {
     const node = document.getElementById(id);
     if (!node) return;
@@ -21,9 +21,8 @@ export default function Hero({ innerRef, onStart }) {
 
   return (
     <section
-      id="inicio"
-      ref={innerRef}
-      className="pt-24 pb-16 px-4 bg-gradient-to-br from-emerald-600 via-cyan-600 to-sky-600 text-white scroll-mt-24"
+      id="presentacion"
+      className="pt-24 pb-16 px-4 bg-gradient-to-br from-[#0b1d3b] via-[#1f6b4a] to-[#c7a04a] text-white scroll-mt-24"
     >
       <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-8 items-center">
         <div className="space-y-5">
@@ -40,7 +39,7 @@ export default function Hero({ innerRef, onStart }) {
               <ul className="mt-3 space-y-2 text-sm">
                 {learning.map((item) => (
                   <li key={item} className="flex items-start gap-2">
-                    <span className="mt-[6px] w-2 h-2 rounded-full bg-emerald-200" />
+                    <span className="mt-[6px] w-2 h-2 rounded-full bg-[#f3d37a]" />
                     <span>{item}</span>
                   </li>
                 ))}
@@ -67,7 +66,7 @@ export default function Hero({ innerRef, onStart }) {
           <div className="flex flex-wrap gap-3">
             <button
               onClick={onStart}
-              className="px-6 py-3 rounded-full bg-white text-emerald-700 font-semibold shadow-lg hover:-translate-y-0.5 transition"
+              className="px-6 py-3 rounded-full bg-[#f3d37a] text-[#0b1d3b] font-semibold shadow-lg hover:-translate-y-0.5 transition"
             >
               Ir al simulador
             </button>
@@ -89,7 +88,7 @@ export default function Hero({ innerRef, onStart }) {
             <button
               type="button"
               onClick={() => scrollTo("casos")}
-              className="px-4 py-2 rounded-full bg-white/10 border border-white/20 text-sm font-semibold hover:bg-white/15 transition"
+              className="px-4 py-2 rounded-full bg-white/10 border border-white/25 text-sm font-semibold hover:bg-white/15 transition"
             >
               Ver casos
             </button>
