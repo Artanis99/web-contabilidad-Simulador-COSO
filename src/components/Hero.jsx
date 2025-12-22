@@ -23,7 +23,7 @@ export default function Hero({ innerRef, onStart }) {
     <section
       id="inicio"
       ref={innerRef}
-      className="pt-40 pb-16 px-4 bg-gradient-to-br from-[#0b1d3b] via-[#1f6b4a] to-[#c7a04a] text-white scroll-mt-24"
+      className="pt-40 pb-16 px-4 bg-gradient-to-br from-[#0b1d3b] via-[#12365f] to-[#1f6b4a] text-white scroll-mt-24"
     >
       <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-8 items-center">
         <div className="space-y-5">
@@ -40,7 +40,7 @@ export default function Hero({ innerRef, onStart }) {
               <ul className="mt-3 space-y-2 text-sm">
                 {learning.map((item) => (
                   <li key={item} className="flex items-start gap-2">
-                    <span className="mt-[6px] w-2 h-2 rounded-full bg-[#f3d37a]" />
+                    <span className="mt-[6px] w-2 h-2 rounded-full bg-[#d7b162]" />
                     <span>{item}</span>
                   </li>
                 ))}
@@ -67,19 +67,19 @@ export default function Hero({ innerRef, onStart }) {
           <div className="flex flex-wrap gap-3">
             <button
               onClick={onStart}
-              className="px-6 py-3 rounded-full bg-[#f3d37a] text-[#0b1d3b] font-semibold shadow-lg hover:-translate-y-0.5 transition"
+              className="px-6 py-3 rounded-full bg-[#d7b162] text-[#0b1d3b] font-semibold shadow-lg hover:-translate-y-0.5 transition"
             >
               Ir al simulador
             </button>
             <a
               href="#/coso-2013"
-              className="px-5 py-3 rounded-full border border-white/50 text-white font-semibold hover:bg-white/10 transition"
+              className="px-5 py-3 rounded-full border border-white/40 text-white font-semibold hover:bg-white/10 transition"
             >
               Ver COSO 2013
             </a>
             <a
               href="#/coso-erm-2017"
-              className="px-5 py-3 rounded-full border border-white/50 text-white font-semibold hover:bg-white/10 transition"
+              className="px-5 py-3 rounded-full border border-white/40 text-white font-semibold hover:bg-white/10 transition"
             >
               Ver COSO ERM 2017
             </a>
