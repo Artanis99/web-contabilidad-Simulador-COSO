@@ -22,19 +22,10 @@ export default function Navbar({ currentRoute, onNavigate }) {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-30 shadow-sm">
-      <div className="bg-[#8b1e2d] text-white">
+      <div className="bg-[#0b1d3b] text-white">
         <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between gap-4">
-          <div className="flex items-center gap-3">
-            <img src="/imagenes/Escudo_UNSAAC.png" alt="Escudo UNSAAC" className="h-12 w-auto" />
-            <div className="leading-tight">
-              <div className="text-xl font-black tracking-wide">UNSAAC</div>
-              <div className="text-[11px] uppercase text-white/80">
-                Universidad Nacional de San Antonio Abad del Cusco
-              </div>
-            </div>
-            <div className="hidden sm:block text-[10px] uppercase tracking-[0.25em] text-white/70">
-              332 años
-            </div>
+          <div className="text-xs uppercase tracking-[0.35em] text-white/70 font-semibold hidden sm:block">
+            Simulador COSO
           </div>
 
           <button
@@ -55,10 +46,26 @@ export default function Navbar({ currentRoute, onNavigate }) {
             </svg>
             <span className="ml-2">{isOpen ? "Cerrar" : "Menú"}</span>
           </button>
+          <div className="ml-auto flex items-center gap-4">
+            <div className="text-right leading-tight">
+              <div className="text-lg sm:text-xl font-black">Control Interno</div>
+              <div className="text-[11px] uppercase text-white/80">
+                Facultad de Ciencias Contables y Financieras · UNSAAC
+              </div>
+            </div>
+            <div className="flex items-center gap-2">
+              <img src="/imagenes/Escudo_UNSAAC.png" alt="Escudo UNSAAC" className="h-12 w-auto" />
+              <img
+                src="/imagenes/facultad.png"
+                alt="Logo Facultad de Ciencias Contables y Financieras"
+                className="h-10 w-auto hidden sm:block"
+              />
+            </div>
+          </div>
         </div>
       </div>
 
-      <div className="bg-[#7a1522] text-white/90">
+      <div className="bg-[#12365f] text-white/90">
         <div className="max-w-6xl mx-auto px-4 py-2 hidden md:flex flex-wrap gap-2 text-xs font-semibold">
           {links.map((link) => (
             <button

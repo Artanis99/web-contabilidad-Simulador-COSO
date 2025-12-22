@@ -11,7 +11,7 @@ import Footer from "./components/Footer";
 const Coso2013Page = lazy(() => import("./pages/Coso2013Page"));
 const CosoErm2017Page = lazy(() => import("./pages/CosoErm2017Page"));
 
-const homeSectionIds = ["inicio", "casos", "evaluacion", "recursos", "videos"];
+const homeSectionIds = ["inicio", "casos", "evaluacion", "recursos", "videos", "integrantes"];
 
 function parseRouteFromHash(hash) {
   const raw = (hash ?? "").replace(/^#/, "");
@@ -115,7 +115,7 @@ export default function App() {
           </main>
         </>
       )}
-      <Footer />
+      <Footer innerRef={sectionsRef.integrantes.ref} />
     </div>
   );
 }

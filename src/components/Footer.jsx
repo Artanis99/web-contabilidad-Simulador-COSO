@@ -18,9 +18,9 @@ const memberColumns = [
   members.slice(8),
 ];
 
-export default function Footer() {
+export default function Footer({ innerRef }) {
   return (
-    <footer id="integrantes" className="mt-16 bg-[#7a1b27] text-white scroll-mt-24">
+    <footer id="integrantes" ref={innerRef} className="mt-16 bg-[#0b1d3b] text-white scroll-mt-24">
       <div className="max-w-6xl mx-auto px-4 py-10 grid gap-8 md:grid-cols-[1.1fr_2fr]">
         <div className="space-y-3">
           <div className="text-sm uppercase tracking-[0.3em] text-white/70 font-semibold">Integrantes</div>
@@ -28,6 +28,11 @@ export default function Footer() {
           <p className="text-sm text-white/80">
             Facultad de Ciencias Contables y Financieras · UNSAAC
           </p>
+          <img
+            src="/imagenes/facultad.png"
+            alt="Logo de la Facultad de Ciencias Contables y Financieras"
+            className="h-16 w-auto"
+          />
         </div>
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -44,7 +49,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="border-t border-white/15">
+      <div className="border-t border-white/15 bg-[#12365f]">
         <div className="max-w-6xl mx-auto px-4 py-4 text-center text-xs text-white/80 font-semibold">
           © 2025 Universidad Nacional de San Antonio Abad del Cusco · Todos los derechos reservados
         </div>
