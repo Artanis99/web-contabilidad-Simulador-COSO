@@ -1,7 +1,6 @@
 import { Suspense, lazy, useEffect, useMemo, useRef, useState, createRef } from "react";
 import Navbar from "./components/Navbar";
 import BackToTopButton from "./components/BackToTopButton";
-import CoverPage from "./components/CoverPage";
 import Hero from "./components/Hero";
 import CasesSection from "./components/CasesSection";
 import QuizSection from "./components/QuizSection";
@@ -107,8 +106,7 @@ export default function App() {
         </Suspense>
       ) : (
         <>
-          <CoverPage innerRef={sectionsRef.inicio.ref} />
-          <Hero onStart={() => navigate("cosoErm2017")} />
+          <Hero innerRef={sectionsRef.inicio.ref} onStart={() => navigate("cosoErm2017")} />
           <main className="space-y-16 sm:space-y-20 pb-20 sm:pb-24">
             <CasesSection innerRef={sectionsRef.casos.ref} />
             <QuizSection innerRef={sectionsRef.evaluacion.ref} />

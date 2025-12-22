@@ -12,7 +12,7 @@ const deliverables = [
   "Tablero KPI/KRI y monitoreo",
 ];
 
-export default function Hero({ onStart }) {
+export default function Hero({ innerRef, onStart }) {
   const scrollTo = (id) => {
     const node = document.getElementById(id);
     if (!node) return;
@@ -21,8 +21,9 @@ export default function Hero({ onStart }) {
 
   return (
     <section
-      id="presentacion"
-      className="pt-24 pb-16 px-4 bg-gradient-to-br from-[#0b1d3b] via-[#1f6b4a] to-[#c7a04a] text-white scroll-mt-24"
+      id="inicio"
+      ref={innerRef}
+      className="pt-40 pb-16 px-4 bg-gradient-to-br from-[#0b1d3b] via-[#1f6b4a] to-[#c7a04a] text-white scroll-mt-24"
     >
       <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-8 items-center">
         <div className="space-y-5">

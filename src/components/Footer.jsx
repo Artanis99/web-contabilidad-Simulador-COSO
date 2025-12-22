@@ -20,7 +20,7 @@ const memberColumns = [
 
 export default function Footer() {
   return (
-    <footer className="mt-16 bg-[#7a1b27] text-white">
+    <footer id="integrantes" className="mt-16 bg-[#7a1b27] text-white scroll-mt-24">
       <div className="max-w-6xl mx-auto px-4 py-10 grid gap-8 md:grid-cols-[1.1fr_2fr]">
         <div className="space-y-3">
           <div className="text-sm uppercase tracking-[0.3em] text-white/70 font-semibold">Integrantes</div>

@@ -11,6 +11,7 @@ export default function Navbar({ currentRoute, onNavigate }) {
     { id: "evaluacion", label: "Evaluación", kind: "section" },
     { id: "recursos", label: "Recursos", kind: "section" },
     { id: "videos", label: "Videos", kind: "section" },
+    { id: "integrantes", label: "Integrantes", kind: "section" },
   ];
 
   const handleNavigate = (link) => {
@@ -36,54 +37,24 @@ export default function Navbar({ currentRoute, onNavigate }) {
             </div>
           </div>
 
-          <div className="flex items-center gap-3">
-            <div className="hidden md:flex items-center gap-3 text-white/90">
-              <button type="button" className="h-8 w-8 rounded-full border border-white/30 grid place-items-center hover:bg-white/10" aria-label="Facebook">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                  <path d="M13 9h3V6h-3c-2 0-4 2-4 4v2H6v3h3v6h3v-6h3l1-3h-4v-2c0-.6.4-1 1-1z" />
-                </svg>
-              </button>
-              <button type="button" className="h-8 w-8 rounded-full border border-white/30 grid place-items-center hover:bg-white/10" aria-label="Youtube">
-                <svg width="16" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                  <path d="M23 7.5a3 3 0 0 0-2.1-2.1C19.1 5 12 5 12 5s-7.1 0-8.9.4A3 3 0 0 0 1 7.5 31.7 31.7 0 0 0 .6 12a31.7 31.7 0 0 0 .4 4.5 3 3 0 0 0 2.1 2.1C4.9 19 12 19 12 19s7.1 0 8.9-.4a3 3 0 0 0 2.1-2.1 31.7 31.7 0 0 0 .4-4.5 31.7 31.7 0 0 0-.4-4.5zM10 15V9l5 3-5 3z" />
-                </svg>
-              </button>
-              <button type="button" className="h-8 w-8 rounded-full border border-white/30 grid place-items-center hover:bg-white/10" aria-label="Correo">
-                <svg width="16" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                  <path d="M4 6h16a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2zm8 6 8-5H4l8 5zm-8 5h16V9l-8 5-8-5v8z" />
-                </svg>
-              </button>
-              <button type="button" className="h-8 w-8 rounded-full border border-white/30 grid place-items-center hover:bg-white/10" aria-label="Teléfono">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                  <path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.8-.4 1.2-.2 1 .3 2.1.5 3.2.5.7 0 1.2.5 1.2 1.2V20c0 .7-.5 1.2-1.2 1.2C9.4 21.2 2.8 14.6 2.8 6c0-.7.5-1.2 1.2-1.2h2.3c.7 0 1.2.5 1.2 1.2 0 1.1.2 2.2.5 3.2.1.4 0 .9-.3 1.2l-2.3 2.2z" />
-                </svg>
-              </button>
-            </div>
-            <button
-              type="button"
-              className="hidden sm:inline-flex items-center px-4 py-2 rounded-full bg-[#d7b162] text-[#6c141f] font-bold text-xs uppercase tracking-[0.2em] shadow"
-            >
-              Trámites
-            </button>
-            <button
-              type="button"
-              className="md:hidden inline-flex items-center justify-center rounded-xl border border-white/40 bg-white/10 px-3 py-2 text-sm font-semibold"
-              aria-label={isOpen ? "Cerrar menú" : "Abrir menú"}
-              aria-expanded={isOpen}
-              aria-controls={menuId}
-              onClick={() => setIsOpen((value) => !value)}
-            >
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <path
-                  d={isOpen ? "M6 6l12 12M18 6L6 18" : "M4 7h16M4 12h16M4 17h16"}
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                />
-              </svg>
-              <span className="ml-2">{isOpen ? "Cerrar" : "Menú"}</span>
-            </button>
-          </div>
+          <button
+            type="button"
+            className="md:hidden inline-flex items-center justify-center rounded-xl border border-white/40 bg-white/10 px-3 py-2 text-sm font-semibold"
+            aria-label={isOpen ? "Cerrar menú" : "Abrir menú"}
+            aria-expanded={isOpen}
+            aria-controls={menuId}
+            onClick={() => setIsOpen((value) => !value)}
+          >
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path
+                d={isOpen ? "M6 6l12 12M18 6L6 18" : "M4 7h16M4 12h16M4 17h16"}
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+              />
+            </svg>
+            <span className="ml-2">{isOpen ? "Cerrar" : "Menú"}</span>
+          </button>
         </div>
       </div>
 
