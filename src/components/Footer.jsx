@@ -22,17 +22,19 @@ export default function Footer({ innerRef }) {
   return (
     <footer id="integrantes" ref={innerRef} className="mt-16 bg-[#0b1d3b] text-white scroll-mt-24">
       <div className="max-w-6xl mx-auto px-4 py-10 grid gap-8 md:grid-cols-[1.1fr_2fr]">
-        <div className="space-y-3">
-          <div className="text-sm uppercase tracking-[0.3em] text-white/70 font-semibold">Integrantes</div>
-          <div className="text-2xl font-black">Control Interno</div>
-          <p className="text-sm text-white/80">
-            Facultad de Ciencias Contables y Financieras · UNSAAC
-          </p>
+        <div className="flex items-center gap-4">
           <img
             src="/imagenes/facultad.png"
             alt="Logo de la Facultad de Ciencias Contables y Financieras"
             className="h-16 w-auto"
           />
+          <div className="space-y-2">
+            <div className="text-sm uppercase tracking-[0.3em] text-white/70 font-semibold">Integrantes</div>
+            <div className="text-2xl font-black">Control Interno</div>
+            <p className="text-sm text-white/80">
+              Facultad de Ciencias Contables y Financieras · UNSAAC
+            </p>
+          </div>
         </div>
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
